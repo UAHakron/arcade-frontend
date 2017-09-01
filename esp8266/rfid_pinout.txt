@@ -1,0 +1,8 @@
+pinout:
+3.3       3.3
+gnd       gnd
+sda       sda(d14)
+sck       sck(D13)
+Mosi      d11 mosi
+miso      miso
+rst       d15(scl)(d3)
