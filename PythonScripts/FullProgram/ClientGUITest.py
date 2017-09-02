@@ -41,7 +41,7 @@ def scanTag():
 
             # Print UID
             print "Card read UID: "+str(hex(uid[0]))+"."+str(hex(uid[1]))+"."+str(hex(uid[2]))+"."+str(hex(uid[3]))
-            response = requests.post("https://hakron.io/arcade/api/users", json={"name":str(name_text.get()),"nfc":str(uid[0])+"."+str(uid[1])+"."+str(uid[2])+"."+str(uid[3]),"email":str(email_text.get()) ,"bits":"0"})
+            response = requests.post("https://hakron.io/arcade/api/users", json={"name":str(name_text.get()),"nfc":str(hex(uid[0]))+"."+str(hex(uid[1]))+"."+str(hex(uid[2]))+"."+str(hex(uid[3])),"email":str(email_text.get()) ,"bits":"0"})
             print(response.json())
 
 
