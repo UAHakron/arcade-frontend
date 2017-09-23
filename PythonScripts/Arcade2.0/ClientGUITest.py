@@ -5,6 +5,7 @@ import RPi.GPIO as GPIO
 import MFRC522
 import signal
 import requests
+import json
 from Tkinter import *
 
 continue_reading = True
