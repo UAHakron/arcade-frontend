@@ -5,15 +5,15 @@
 #define SS_PIN 4 //For RFID Scanner
 #define RST_PIN 5 //For RFID Scanner
 MFRC522 mfrc522(SS_PIN, RST_PIN);   // Create MFRC522 instance.
-//user and password for wifi
-const char* ssid = "FBI Surveillance Van";
-const char* password = "bushdid911";
+//user and password for wifi capitalh
+const char* ssid = "DeepHire House";//The Bit Factory
+const char* password = "capitalh";//bbaCCESS23
 const int bitsDelta = 100; //add x bits to the scanner at this module
 
 //host website and port and hakron.io's fingerprint
 const char* host = "hakron.io";
 const int httpsPort = 443;
-const char* fingerprint = "5F 05 53 D2 B7 30 65 82 22 A1 C5 20 9D 45 32 12 FB 51 56 09";
+const char* fingerprint = "84 BD A4 3C 5E 46 C4 69 F0 EC D6 C1 92 4A 79 22 F6 54 D4 64";
 
 
 void putRequest(String nfcid)
@@ -65,6 +65,7 @@ void putRequest(String nfcid)
   Serial.println(line);
   Serial.println("==========");
   Serial.println("closing connection");
+  //delay(10000);
   }
 
 void setup() 
