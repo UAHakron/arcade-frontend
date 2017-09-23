@@ -108,24 +108,19 @@ void loop()
   byte letter;
   for (byte i = 0; i < mfrc522.uid.size; i++) 
   {
-     Serial.print(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : " ");
+     Serial.print(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : "0x");
      Serial.print(mfrc522.uid.uidByte[i], HEX);
-     content.concat(String(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : "."));
+     content.concat(String(mfrc522.uid.uidByte[i] < 0x10 ? " 0" : ".0x"));
      content.concat(String(mfrc522.uid.uidByte[i], HEX));
   }
   Serial.println();
   Serial.print("Message : ");
-  content.toUpperCase();
+  //content.toUpperCase();
 
   //do local testing here e.g. check if uid exists
   //Serial.println(content.substring(1));
+  //Serial.print(content.substring(1));
   putRequest(content.substring(1));//send put request
   //delay(3000);
-  if (content.substring(1) == "BD 31 15 2B") //change here the UID of the card/cards that you want to give access
-  {
-    Serial.println("Authorized access");
-    Serial.println();
-    delay(3000);
-  }
  
 } 
