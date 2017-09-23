@@ -35,7 +35,7 @@ void putRequest(String nfcid)
     Serial.println("certificate doesn't match");
   }
 
-  String url = "/arcade/bits?nfc=" + nfcid + "&id=1";
+  String url = "/arcade/bits?nfc=" + nfcid + "&num=1";
   Serial.print("requesting URL: ");
   Serial.println(url);
 
