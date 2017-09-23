@@ -46,7 +46,7 @@ def scanTag():
             #API stuff
             
             #get request on email
-            email_exists = requests.get('https://hakron.io/arcade/people/email')
+            email_exists = requests.get('https://hakron.io/arcade/people/'+str(email_text.get()))
             
                 #if email exists
             if email_exists.status_code == 200:
