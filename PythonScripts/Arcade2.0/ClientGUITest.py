@@ -57,7 +57,7 @@ def scanTag():
             else:
                 create_user = requests.post("https://hakron.io/arcade/api/people", json={"name":str(name_text.get()),"nfc":str(hex(uid[0]))+"."+str(hex(uid[1]))+"."+str(hex(uid[2]))+"."+str(hex(uid[3])),"email":str(email_text.get()) ,"bits":"0"})
                 #user_data = json.loads(create_user.json())
-                update_id = requests.post("https:/hakron.io/arcade/api/tags/" + str(hex(uid[0]))+"."+str(hex(uid[1]))+"."+str(hex(uid[2]))+"."+str(hex(uid[3])) + "/people", json={"_id":create_user.json()["_id"]})
+                update_id = requests.post("https://hakron.io/arcade/api/tags/" + str(hex(uid[0]))+"."+str(hex(uid[1]))+"."+str(hex(uid[2]))+"."+str(hex(uid[3])) + "/people", json={"_id":create_user.json()["_id"]})
                 
             #
 
