@@ -52,7 +52,7 @@ def scanTag():
             if email_exists.status_code == 200:
                 #user_data = json.loads(email_exists.json())
 
-                update_id = requests.post("https:/hakron.io/arcade/api/tags/" + str(hex(uid[0]))+"."+str(hex(uid[1]))+"."+str(hex(uid[2]))+"."+str(hex(uid[3])) + "/people", json={"_id":email_exists.json()["_id"]})
+                update_id = requests.post("https://hakron.io/arcade/api/tags/" + str(hex(uid[0]))+"."+str(hex(uid[1]))+"."+str(hex(uid[2]))+"."+str(hex(uid[3])) + "/people", json={"_id":email_exists.json()["_id"]})
                 #if email does not exist
             else:
                 create_user = requests.post("https://hakron.io/arcade/api/people", json={"name":str(name_text.get()),"nfc":str(hex(uid[0]))+"."+str(hex(uid[1]))+"."+str(hex(uid[2]))+"."+str(hex(uid[3])),"email":str(email_text.get()) ,"bits":"0"})
