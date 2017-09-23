@@ -6,8 +6,8 @@
 #define RST_PIN 5 //For RFID Scanner
 MFRC522 mfrc522(SS_PIN, RST_PIN);   // Create MFRC522 instance.
 //user and password for wifi capitalh
-const char* ssid = "DeepHire House";//The Bit Factory
-const char* password = "capitalh";//bbaCCESS23
+const char* ssid = "The Bit Factory";//
+const char* password = "bbaCCESS23";//
 const int bitsDelta = 100; //add x bits to the scanner at this module
 
 //host website and port and hakron.io's fingerprint
@@ -35,7 +35,7 @@ void putRequest(String nfcid)
     Serial.println("certificate doesn't match");
   }
 
-  String url = "/arcade/bits?nfc=" + nfcid + "&num=1";
+  String url = "/arcade/api/bits?nfc=" + nfcid + "&num=1";
   Serial.print("requesting URL: ");
   Serial.println(url);
 
